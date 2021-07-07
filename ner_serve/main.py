@@ -1,22 +1,17 @@
-import os
-
-import ray
-import torch
-from ray import serve
+from fastapi import FastAPI
+from objects import (
+    DocumentOut,
+)
 
 from model import NerModel
 
-
-@serve.deployment(route_prefix="/ner")
-class NerService:
-    def __init__(self):
-        language_model = os.getenv("LANGUAGE_MODEL", "microsoft/Multilingual-MiniLM-L12-H384")
-        self.ner_model = NerModel(language_model)
-
-    async def __call__(self, request):
-        return self.ner_model()
+app = FastAPI(
+    title="Simple NER Model",
+    version="1.0.0",
+)
+model = NerModel()
 
 
-ray.init(num_cpus=)
-serve.start()
-NerService.deploy()
+@app.get("/api/ner", response_model=DocumentOut)
+def predict_demo(sentence: str):
+    return model([sentence])[0]

@@ -1,0 +1,18 @@
+FROM tiangolo/uvicorn-gunicorn:python3.8-slim
+
+# Copy and install requirements.txt
+COPY ./requirements.txt ./requirements.txt
+COPY ./ner_serve /app
+COPY ./scripts/start.sh /start.sh
+COPY ./scripts/prestart.sh /app
+COPY ./scripts/gunicorn_conf.py /gunicorn_conf.py
+COPY ./scripts/start-reload.sh /start-reload.sh
+RUN mkdir -p /app/model \
+    && pip install --no-cache-dir -r requirements.txt \
+    && python -m spacy download xx_sent_ud_sm \
+    && chmod +x /start.sh && chmod +x /start-reload.sh
+
+ARG MODEL_PATH
+COPY ${MODEL_PATH}/* /app/model/
+
+ENV APP_MODULE=main:app
