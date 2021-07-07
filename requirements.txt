@@ -1,0 +1,7 @@
+-f https://download.pytorch.org/whl/torch_stable.html
+torch==1.9.0+cpu
+transformer-embedder~=1.7.10
+sentencepiece
+onnx~=1.9.0
+onnxruntime~=1.8.0
+psutil

@@ -1,21 +1,22 @@
+import os
+
 import ray
 import torch
 from ray import serve
 
-from model import NERModel
+from model import NerModel
 
 
 @serve.deployment(route_prefix="/ner")
 class NerService:
     def __init__(self):
-        pass
-        # self.model = NERModel("")
-        # self.model.eval()
+        language_model = os.getenv("LANGUAGE_MODEL", "microsoft/Multilingual-MiniLM-L12-H384")
+        self.ner_model = NerModel(language_model)
 
     async def __call__(self, request):
-        return {"out": "Hello World!"}
+        return self.ner_model()
 
 
-ray.init(num_cpus=2)
+ray.init(num_cpus=)
 serve.start()
 NerService.deploy()
