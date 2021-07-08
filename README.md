@@ -17,6 +17,12 @@ Environment variables:
 
 ### Docker
 
+```bash
+docker run --name {$CONTAINER_NAME} -p 80:80 riccorl/multilingual-minilm-ner
+```
+
+#### Build From Source
+
 Build:
 
 ```bash
@@ -29,9 +35,10 @@ Run:
 docker run --name {$CONTAINER_NAME} -p 80:80 {$IMAGE_NAME}
 ```
 
+#### Environment Variables
 There are few environment variables that can be passed to the docker container:
 
-#### `TIMEOUT`
+##### `TIMEOUT`
 
 Workers silent for more than this many seconds are killed and restarted. It is usefull when loading 
 multiple languages because it takes time to download all the preprocessing models.
@@ -41,7 +48,7 @@ By default `TIMEOUT="500"`
 docker run --name {$CONTAINER_NAME} -e TIMEOUT="1200" -p 80:80 {$IMAGE_NAME}
 ```
 
-#### `WORKERS_PER_CORE`
+##### `WORKERS_PER_CORE`
 
 This image will check how many CPU cores are available in the current server running your container.
 
@@ -71,7 +78,7 @@ docker run --name {$CONTAINER_NAME} -e WORKERS_PER_CORE="0.5" -p 80:80 {$IMAGE_N
 
 In a server with 8 CPU cores, this would make it start only 4 worker processes.
 
-#### `MAX_WORKERS`
+##### `MAX_WORKERS`
 
 Can be used to limit the number of simultaneous process. By default, the value is `1`.
 
@@ -79,7 +86,7 @@ Can be used to limit the number of simultaneous process. By default, the value i
 docker run --name {$CONTAINER_NAME} -e MAX_WORKERS="1" -p 80:80 {$IMAGE_NAME}
 ```
 
-#### `LOG_LEVEL`
+##### `LOG_LEVEL`
 
 The log level for Gunicorn.
 
