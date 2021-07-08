@@ -3,7 +3,6 @@ from typing import List
 
 import numpy as np
 import onnxruntime as rt
-import psutil
 import transformer_embedder as tre
 from transformer_embedder.tokenizer import ModelInputs
 
@@ -31,10 +30,8 @@ class NerModel:
         weights_path = os.getenv("MODEL_PATH", "model/weights.onnx")
         sess_options = rt.SessionOptions()
         sess_options.graph_optimization_level = rt.GraphOptimizationLevel.ORT_ENABLE_ALL
-        # sess_options.execution_mode = rt.ExecutionMode.ORT_PARALLEL
         sess_options.execution_mode = rt.ExecutionMode.ORT_SEQUENTIAL
-        logical_cores = kwargs.get("logical_cores", False)
-        sess_options.intra_op_num_threads = psutil.cpu_count(logical=logical_cores)
+        sess_options.intra_op_num_threads = os.getenv("NUM_THREADS", 1)
         self.ort_session = rt.InferenceSession(weights_path, sess_options)
 
     def __call__(self, batch, *args, **kwargs) -> List[DocumentOut]:

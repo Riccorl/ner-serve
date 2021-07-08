@@ -1,3 +1,6 @@
+[![Docker](https://img.shields.io/static/v1?style=for-the-badge&message=Docker&color=2496ED&logo=Docker&logoColor=FFFFFF&label=)](https://hub.docker.com/r/riccorl/multilingual-minilm-ner)
+[![Streamlit](https://img.shields.io/static/v1?style=for-the-badge&message=Streamlit&color=FF4B4B&logo=Streamlit&logoColor=FFFFFF&label=)](https://ner-serve-streamlit.herokuapp.com/)
+
 # ner-serve
 
 Simple NER model using Docker, FastAPI, ONNX and Multilingual Mini-LM.
