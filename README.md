@@ -1,9 +1,12 @@
-[![Docker](https://img.shields.io/static/v1?style=for-the-badge&message=Docker&color=2496ED&logo=Docker&logoColor=FFFFFF&label=)](https://hub.docker.com/r/riccorl/multilingual-minilm-ner)
-[![Streamlit](https://img.shields.io/static/v1?style=for-the-badge&message=Streamlit&color=FF4B4B&logo=Streamlit&logoColor=FFFFFF&label=)](https://ner-serve-streamlit.herokuapp.com/)
+![ONNX](https://img.shields.io/static/v1?style=flat&message=ONNX&color=005CED&logo=ONNX&logoColor=FFFFFF&label=)
+![FastAPI](https://img.shields.io/static/v1?style=flat&message=FastAPI&color=009688&logo=FastAPI&logoColor=FFFFFF&label=)
+[![Docker](https://img.shields.io/static/v1?style=flat&message=Docker&color=2496ED&logo=Docker&logoColor=FFFFFF&label=)](https://hub.docker.com/r/riccorl/multilingual-minilm-ner)
+[![Streamlit](https://img.shields.io/static/v1?style=flat&message=Streamlit&color=FF4B4B&logo=Streamlit&logoColor=FFFFFF&label=)](https://ner-serve-streamlit.herokuapp.com/)
 
 # ner-serve
 
-Simple NER model using Docker, FastAPI, ONNX and Multilingual Mini-LM.
+Simple NER model using Docker, FastAPI, ONNX and Multilingual Mini-LM. For a live version go 
+[here](https://ner-serve-streamlit.herokuapp.com/).
 
 Run:
 
@@ -19,6 +22,8 @@ Environment variables:
 - `$MODEL_DIR` default is `resources/model`.
 
 ### Docker
+
+Images are available through the [Docker Hub](https://hub.docker.com/r/riccorl/multilingual-minilm-ner)
 
 ```bash
 docker run --name {$CONTAINER_NAME} -p 80:80 riccorl/multilingual-minilm-ner
