@@ -13,5 +13,5 @@ model = NerModel()
 
 
 @app.get("/api/ner", response_model=DocumentOut)
-def predict_demo(sentence: str):
+def predict(sentence: str):
     return model([sentence])[0]
