@@ -5,10 +5,7 @@ from objects import (
 
 from model import NerModel
 
-app = FastAPI(
-    title="Simple NER Model",
-    version="1.0.0",
-)
+app = FastAPI(title="Simple NER Model", version="1.0.0")
 model = NerModel()
 
 
