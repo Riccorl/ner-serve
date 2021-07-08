@@ -16,3 +16,4 @@ ARG MODEL_PATH
 COPY ${MODEL_PATH}/* /app/model/
 
 ENV APP_MODULE=main:app
+CMD ["/start.sh"]

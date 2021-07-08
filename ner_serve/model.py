@@ -59,7 +59,7 @@ class NerModel:
         service_output = []
         model_outputs: List = np.argmax(model_outputs, axis=-1).tolist()
         for words, model_output in zip(model_inputs.words, model_outputs):
-            words = words[1:-1] # remove CLS and SEP
+            words = words[1:] # remove CLS and SEP
             ner_tags = model_output[1 : len(words)]  # remove CLS and SEP
             tokens = [
                 WordOut(index=i, text=w, ner_tag=self.labels[tag])

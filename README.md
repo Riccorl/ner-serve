@@ -1,6 +1,6 @@
 # ner-serve
 
-Simple NER model using DOcker, FastAPI, ONNX and Multilingual Mini-LM.
+Simple NER model using Docker, FastAPI, ONNX and Multilingual Mini-LM.
 
 Run:
 
@@ -61,7 +61,9 @@ If you used the value `3` in a server with 2 CPU cores, it would run 6 worker pr
 
 You can use floating point values too.
 
-So, for example, if you have a big server (let's say, with 8 CPU cores) running several applications, and you have a FastAPI application that you know won't need high performance. And you don't want to waste server resources. You could make it use `0.5` workers per CPU core. For example:
+So, for example, if you have a big server (let's say, with 8 CPU cores) running several applications, and you
+have a FastAPI application that you know won't need high performance. And you don't want to waste server 
+resources. You could make it use `0.5` workers per CPU core. For example:
 
 ```bash
 docker run --name {$CONTAINER_NAME} -e WORKERS_PER_CORE="0.5" -p 80:80 {$IMAGE_NAME}
