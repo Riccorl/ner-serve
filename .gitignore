@@ -1,6 +1,7 @@
 # custom
 /test.ipynb
 /test.py
+model
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/python,pycharm+all,vscode,macos,linux,windows
@@ -280,6 +281,7 @@ dmypy.json
 .prof
 
 ### vscode ###
+.vscode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
