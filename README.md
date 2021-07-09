@@ -10,6 +10,8 @@
 Simple NER model using Docker, FastAPI, ONNX and Multilingual Mini-LM. For a live version go 
 [here](https://ner-serve-streamlit.herokuapp.com/).
 
+![alt text](docs/docker_run.png)
+
 Run:
 
 ```bash

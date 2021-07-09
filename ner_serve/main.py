@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-from objects import (
-    DocumentOut,
-)
+from objects import DocumentOut
 
 from model import NerModel
 
