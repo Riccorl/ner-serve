@@ -1,8 +1,9 @@
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Riccorl/ner-serve)
+[![Streamlit](https://img.shields.io/static/v1?style=flat&message=Open%20in%20Streamlit&color=FF4B4B&logo=Streamlit&logoColor=FFFFFF&label=)](https://ner-serve-streamlit.herokuapp.com/)
 ![ONNX](https://img.shields.io/static/v1?style=flat&message=ONNX&color=005CED&logo=ONNX&logoColor=FFFFFF&label=)
 ![FastAPI](https://img.shields.io/static/v1?style=flat&message=FastAPI&color=009688&logo=FastAPI&logoColor=FFFFFF&label=)
 [![Docker](https://img.shields.io/static/v1?style=flat&message=Docker&color=2496ED&logo=Docker&logoColor=FFFFFF&label=)](https://hub.docker.com/r/riccorl/multilingual-minilm-ner)
-[![Streamlit](https://img.shields.io/static/v1?style=flat&message=Streamlit&color=FF4B4B&logo=Streamlit&logoColor=FFFFFF&label=)](https://ner-serve-streamlit.herokuapp.com/)
+
 
 # ner-serve
 
